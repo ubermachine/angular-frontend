@@ -1,0 +1,9 @@
+
+<div  *ngFor="let article of articles">
+	<div ng-bind-html>	<h2>{{article.title}}</h2>
+  
+		<div [innerHTML]="article.content"></div>
+
+		<a href="{{article.url}}">Read full article</a>
+	</div>	
+</div>
