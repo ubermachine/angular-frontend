@@ -5,13 +5,6 @@
 			<div *ngIf="viewClicked" [innerHTML]="(article.content)"></div>
 			<!--<a class="btn btn-secondary btn-sm" href="#" role="button">Link</a>
 			a href="{{article.content}}">Read full article</a>-->
-			<label>Uuseername</label>
-			<input 
-			type ="text"
-			class="form-control"
-			[(ngModel)]="username"
-			>
-			<hr>
 			<p *ngIf="readFull" >{{username}}</p>
 			<p>{{article.url}}</p>
 			<button 
