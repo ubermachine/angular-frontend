@@ -1,9 +1,20 @@
+<div class="col-md-12">
+<div class="card">
+	<div class='card-body'  *ngFor="let article of articles">
+		<div ng-bind-html>	<h2>{{article.title}}</h2>
+		<div *ngIf="viewClicked!==article; then thenBlock else elseBlock"></div>
+		<ng-template #thenBlock><div [innerHTML]="(article.content.length>60)? (article.content | slice:0:500)+'..':(article.content)"></div>
+			</ng-template>
+		<ng-template #elseBlock><div [innerHTML]="(article.content)"></div>
+			</ng-template>	
+			
+		<button 
+		class="btn btn-secondary btn-sm"
+		(click)="viewClicked=article" >
+		View</button>
+		<hr/>
+		</div>	
+	
+	</div>
 
-<div  *ngFor="let article of articles">
-	<div ng-bind-html>	<h2>{{article.title}}</h2>
-  
-		<div [innerHTML]="article.content"></div>
-
-		<a href="{{article.url}}">Read full article</a>
-	</div>	
 </div>

@@ -7,12 +7,20 @@ import { ApiService } from '../api.service';
 })
 export class PostsComponent implements OnInit {
   articles;
-
+  username='yjy';
+  viewClicked=false;
   constructor(private apiService: ApiService) { }
   ngOnInit() {
     this.apiService.getPosts().subscribe((data)=>{
       console.log(data);
       this.articles = data['results'];
-    });
+	 });
+	 
+
+
+
+
+
   }
 }
+
